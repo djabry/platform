@@ -30,12 +30,13 @@ package org.djabry.platform.domain.api;
 public enum Role {
 
     USER("ROLE_USER"),
-    ADMINISTRATOR("ROLE_ADMINISTRATOR");
+    ADMINISTRATOR("ROLE_ADMINISTRATOR"),
+    APPLICATION("ROLE_APPLICATION");
 
+
+    final String roleName;
 
      Role(String name){
         this.roleName = name;
     }
-
-    final String roleName;
 }

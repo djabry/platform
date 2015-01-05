@@ -31,7 +31,7 @@ import java.util.Set;
  */
 
 
-public interface Group<U extends User> extends DomainObject<U>{
+public interface Group<U extends User> extends DomainObject<U, Long> {
 
     /**
      * @return The name of the group

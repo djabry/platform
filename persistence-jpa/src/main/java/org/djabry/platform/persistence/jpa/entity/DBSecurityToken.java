@@ -26,10 +26,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.djabry.platform.domain.api.SecurityToken;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * Created by djabry on 03/01/15.
@@ -38,9 +37,11 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-public class DBSecurityToken extends DBObject implements SecurityToken<DBUser> {
+public class DBSecurityToken extends DBObject<String> implements SecurityToken<DBUser> {
+    @Id
+    private String id = UUID.randomUUID().toString();
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private DBUser user;
 
     @Column

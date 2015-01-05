@@ -22,30 +22,19 @@
 
 package org.djabry.platform.persistence.jpa.entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.djabry.platform.domain.api.DomainObject;
-import org.springframework.data.jpa.domain.AbstractAuditable;
 
 import javax.persistence.MappedSuperclass;
-import java.util.UUID;
+import java.io.Serializable;
 
 /**
  * Created by djabry on 03/01/15.
  */
 
-@Data
-@EqualsAndHashCode(callSuper = true)
+
 @MappedSuperclass
-public abstract class DBObject extends AbstractAuditable<DBUser,String> implements DomainObject<DBUser>{
+public abstract class DBObject<ID extends Serializable> extends AbstractAuditable<DBUser, ID> implements DomainObject<DBUser, ID> {
 
-    public DBObject(String id){
-        this.setId(id);
-    }
-
-    public DBObject(){
-        this(UUID.randomUUID().toString());
-    }
 
 
 

@@ -25,7 +25,7 @@ package org.djabry.platform.service.security;
 import com.mysema.query.types.expr.BooleanExpression;
 import org.djabry.platform.persistence.jpa.entity.DBUserAccount;
 import org.djabry.platform.persistence.jpa.entity.QDBUserAccount;
-import org.djabry.platform.persistence.jpa.repository.DBRepository;
+import org.djabry.platform.service.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -43,7 +43,7 @@ public class DefaultUserDetailsService implements UserDetailsService {
     UserDetailsFactory userDetailsFactory;
     
     @Autowired
-    DBRepository<DBUserAccount> userDBRepository;
+    AccountRepository userDBRepository;
     /**
      * Locates the user based on the username. In the actual implementation, the search may possibly be case
      * sensitive, or case insensitive depending on how the implementation instance is configured. In this case, the

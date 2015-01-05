@@ -22,6 +22,7 @@
 
 package org.djabry.platform.domain.api;
 
+import org.djabry.platform.domain.api.annotations.UUID;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
@@ -33,7 +34,10 @@ import java.util.Set;
  * This interface represents security objects only accessible to internal security processes
  *
  */
-public interface UserAccount<U extends User,G extends Group> extends DomainObject<U>{
+public interface UserAccount<U extends User, G extends Group> extends DomainObject<U, String> {
+
+    @UUID
+    String getId();
 
     /**
      * @return get the user associated with the security setup

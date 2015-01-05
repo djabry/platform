@@ -27,6 +27,7 @@
  */
 package org.djabry.platform.service.data.config;
 
+import org.djabry.platform.service.repository.DBRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -38,6 +39,8 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -49,9 +52,11 @@ import java.util.Properties;
  * @author djabry
  */
 @Configuration
-@ComponentScan
-@EnableJpaRepositories
+@ComponentScan(basePackages = "org.djabry")
+@EnableJpaRepositories(basePackageClasses = DBRepository.class)
 @EnableTransactionManagement
+@EnableAsync
+@EnableScheduling
 public class DAOConfig {
     
 
@@ -73,9 +78,12 @@ public class DAOConfig {
         LocalContainerEntityManagerFactoryBean lcemfb
                 = new LocalContainerEntityManagerFactoryBean();
 
+        lcemfb.setPackagesToScan("org.djabry.platform");
         lcemfb.setDataSource(dataSource.dataSource());
 
+
         HibernateJpaVendorAdapter va = new HibernateJpaVendorAdapter();
+
         lcemfb.setJpaVendorAdapter(va);
 
         Properties ps = new Properties();

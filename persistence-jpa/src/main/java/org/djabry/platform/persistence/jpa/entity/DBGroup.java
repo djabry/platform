@@ -39,7 +39,11 @@ import java.util.Set;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class DBGroup extends DBObject implements Group<DBUser> {
+public class DBGroup extends DBObject<Long> implements Group<DBUser> {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)

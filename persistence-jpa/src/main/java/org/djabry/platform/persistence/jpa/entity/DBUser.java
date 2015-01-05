@@ -26,8 +26,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.djabry.platform.domain.api.User;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 /**
  * Created by djabry on 03/01/15.
@@ -37,16 +36,16 @@ import javax.persistence.Entity;
 @Data
 @Entity
 //@RegisteredEntity
-public class DBUser extends DBObject implements User<DBUser> {
-
+public class DBUser extends DBObject<Long> implements User<DBUser> {
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    private Long id;
 
     @Column(unique=true)
     private String email;
 
     @Column(unique = true)
     private String username;
-
-
 
 
 }

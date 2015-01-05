@@ -29,7 +29,8 @@ import org.joda.time.DateTime;
  * Modified version of the spring data Auditable interface
  */
 public interface Auditable<U extends User> {
-    U getCreatedBy();
+
+    User getCreatedBy();
 
     void setCreatedBy(U var1);
 

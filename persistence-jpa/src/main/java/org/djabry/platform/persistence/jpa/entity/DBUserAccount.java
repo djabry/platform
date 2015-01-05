@@ -28,11 +28,9 @@ import lombok.EqualsAndHashCode;
 import org.djabry.platform.domain.api.Role;
 import org.djabry.platform.domain.api.UserAccount;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.Set;
+import java.util.UUID;
 
 /**
  * Created by djabry on 03/01/15.
@@ -43,12 +41,17 @@ import java.util.Set;
 @Entity
 //@RegisteredEntity
 @EqualsAndHashCode(callSuper = true)
-public class DBUserAccount extends DBObject implements UserAccount<DBUser,DBGroup> {
+//@AttributeOverride(name="id",column = @Column(length=32))
+public class DBUserAccount extends DBObject<String> implements UserAccount<DBUser, DBGroup> {
 
+    @Id
+    private String id = UUID.randomUUID().toString();
+
+    
     /**
      * The user associated with the security config
      */
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private DBUser user;
 
     /**
@@ -56,7 +59,7 @@ public class DBUserAccount extends DBObject implements UserAccount<DBUser,DBGrou
      * The role of the user
      */
     @Column
-    private Role role;
+    private Role role = Role.USER;
 
     /**
      *The encrypted password of the user
@@ -82,7 +85,7 @@ public class DBUserAccount extends DBObject implements UserAccount<DBUser,DBGrou
     private boolean credentialsNonExpired =true;
     
     @Column
-    private boolean enabled;
+    private boolean enabled = true;
 
 
 }

@@ -27,6 +27,9 @@
  */
 package org.djabry.platform.service.api;
 
+import org.djabry.platform.domain.api.annotations.Password;
+import org.djabry.platform.domain.api.annotations.UUID;
+
 import javax.validation.constraints.NotNull;
 
 /**
@@ -42,5 +45,6 @@ public interface Hasher {
      * @return the encrypted password
      * @throws Exception
      */
-    @NotNull String hashPassword(@NotNull String uuid, @NotNull String password) throws Exception;
+    @NotNull
+    String hashPassword(@UUID String uuid, @Password String password) throws Exception;
 }

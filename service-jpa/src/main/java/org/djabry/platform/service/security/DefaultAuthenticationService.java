@@ -27,10 +27,16 @@ import lombok.extern.java.Log;
 import org.djabry.platform.domain.api.SecurityToken;
 import org.djabry.platform.domain.api.SignUpRequest;
 import org.djabry.platform.persistence.jpa.entity.*;
-import org.djabry.platform.persistence.jpa.repository.DBRepository;
 import org.djabry.platform.service.api.AuthenticationService;
 import org.djabry.platform.service.api.Hasher;
+import org.djabry.platform.service.repository.AccountRepository;
+import org.djabry.platform.service.repository.SecurityTokenRepository;
+import org.djabry.platform.service.repository.UserRepository;
+import org.djabry.platform.service.security.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -45,16 +51,26 @@ import javax.transaction.Transactional;
 public class DefaultAuthenticationService implements AuthenticationService<DBUser> {
 
     @Autowired
-    private DBRepository<DBUser> userDBRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    private DBRepository<DBUserAccount> userSecurityDBRepository;
+    private AccountRepository accountRepository;
 
     @Autowired
-    private DBRepository<DBSecurityToken> securityTokenDBRepository;
+    private SecurityTokenRepository securityTokenRepository;
 
     @Autowired
     private Hasher hasher;
+
+    @Autowired
+    private SecurityConfig securityConfig;
+
+
+    private DBUser currentUser;
+    @Autowired
+    private AuthenticationProvider authProvider;
+    @Autowired
+    private ApplicationAccount account;
 
     /**
      * @param username The username of the account
@@ -65,18 +81,14 @@ public class DefaultAuthenticationService implements AuthenticationService<DBUse
     public SecurityToken<DBUser> login(String username, String password) {
 
         BooleanExpression expression = QDBUserAccount.dBUserAccount.user.username.eq(username);
-        DBUserAccount userSecurity = userSecurityDBRepository.findOne(expression);
+        DBUserAccount userSecurity = accountRepository.findOne(expression);
         if(userSecurity!=null){
             try {
                 String hashedPassword = hasher.hashPassword(userSecurity.getId(),password);
 
                 if(hashedPassword.equals(userSecurity.getEncryptedPassword())){
-
-                    DBSecurityToken token = new DBSecurityToken();
-                    token.setUser(userSecurity.getUser());
-                    token = securityTokenDBRepository.save(token);
-                    return token;
-
+                    this.currentUser = userSecurity.getUser();
+                    return this.createAndSave(userSecurity.getUser());
                 }
 
             } catch (Exception e) {
@@ -92,59 +104,87 @@ public class DefaultAuthenticationService implements AuthenticationService<DBUse
     public SecurityToken<DBUser> signUp(SignUpRequest request) {
         String username = request.getUsername();
         BooleanExpression exp = QDBUser.dBUser.username.eq(username);
-        if(this.userDBRepository.findOne(exp)==null){
+        if (this.userRepository.findOne(exp) == null) {
              DBUser user = new DBUser();
              user.setEmail(request.getEmail());
              user.setUsername(username);
-             
-             DBSecurityToken token = new DBSecurityToken();
-             token.setUser(user);
-             token = this.securityTokenDBRepository.save(token);
-            return token;
+
+            DBUserAccount account = new DBUserAccount();
+
+            account.setUser(user);
+            try {
+                String hashedPassword = hasher.hashPassword(account.getId(), request.getPassword());
+                account.setEncryptedPassword(hashedPassword);
+                account = this.accountRepository.save(account);
+
+
+                return this.createAndSave(account.getUser());
+            } catch (Exception e) {
+                log.severe(e.getMessage());
+            }
+
+
+
         }
-        
+
         return null;
     }
 
+    private DBSecurityToken createAndSave(DBUser user) {
 
+        DBSecurityToken token = new DBSecurityToken();
+        token.setUser(user);
+        return this.securityTokenRepository.save(token);
+
+    }
 
     /**
      * @param resetPasswordToken The token for resetting the password
      * @param newPassword        The new unencrypted password
      */
     @Override
-    public boolean changePassword(SecurityToken resetPasswordToken, String newPassword) {
+    public boolean resetPassword(SecurityToken resetPasswordToken, String newPassword) {
+
+        if (resetPasswordToken.getUser().equals(this.getCurrentUser())) {
+            DBSecurityToken token = this.securityTokenRepository.findOne(resetPasswordToken.getId());
+            if (token != null) {
+
+                DBUserAccount account = this.accountRepository.findOne(QDBUserAccount.dBUserAccount.user.eq(token.getUser()));
+                try {
+                    String encryptedPassword = hasher.hashPassword(account.getId(), newPassword);
+                    account.setEncryptedPassword(encryptedPassword);
+                    this.accountRepository.save(account);
+                } catch (Exception e) {
+                    log.severe(e.getMessage());
+                }
+
+            }
+        }
+
         return false;
+
+
     }
 
     /**
      * Change the current account password
      *
      * @param oldPassword The old unencrypted password
-     * @param newPassword The unencrypted password to change to
      */
     @Override
-    public boolean changePassword(String oldPassword, String newPassword) {
-
-        if(oldPassword.equals(newPassword)){
-            return false;
-        }
+    public SecurityToken<DBUser> requestPasswordResetToken(String oldPassword) {
 
         DBUser currentUser = getCurrentUser();
         if(currentUser!=null ){
 
-
             BooleanExpression exp = QDBUserAccount.dBUserAccount.user.eq(currentUser);
-            DBUserAccount userSecurity = userSecurityDBRepository.findOne(exp);
+            DBUserAccount userSecurity = accountRepository.findOne(exp);
 
             try {
                 String hashedPassword = hasher.hashPassword(userSecurity.getId(),oldPassword);
                 if(hashedPassword.equals(userSecurity.getEncryptedPassword())){
 
-                    String newHashedPassword = hasher.hashPassword(userSecurity.getId(),newPassword);
-                    userSecurity.setEncryptedPassword(newHashedPassword);
-                    userSecurityDBRepository.save(userSecurity);
-                    return true;
+                    return this.createAndSave(userSecurity.getUser());
 
                 }
 
@@ -152,32 +192,41 @@ public class DefaultAuthenticationService implements AuthenticationService<DBUse
                 log.severe(e.getMessage());
             }
 
-
-
-
-
         }
 
-        return false;
+        return null;
 
     }
 
     /**
      * @return The current logged in user
      */
+
+
     @Override
     public DBUser getCurrentUser() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth.isAuthenticated() && currentUser != null) {
+            String username = auth.getName();
+            if (username.equals(currentUser.getUsername())) {
+                return currentUser;
+            }
+        }
+
+        currentUser = null;
+
         return null;
     }
 
     /**
-     * Log out of the current account
+     * Log out of the current account by signing into the application account
      */
     @Override
     public boolean logout() {
-        return false;
-    }
 
+        account.signIn();
+        return true;
+    }
 
 
 }

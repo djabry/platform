@@ -29,6 +29,8 @@ package org.djabry.platform.service.security;
 
 
 import org.djabry.platform.service.api.Hasher;
+import org.djabry.platform.service.security.config.SecurityConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -42,17 +44,18 @@ public class DefaultHasher implements Hasher {
         /**
      * Add additional salt to password hashing
      */
-    private static final String HASH_SALT = "d8a8e885-ecce-42bb-8332-894f20f0d8ed";
-    
-    private static final int HASH_ITERATIONS = 1000;
 
-   private static final ShaPasswordEncoder PASSWORD_ENCODER;
 
-    static{
-        PASSWORD_ENCODER= new ShaPasswordEncoder(256);
-        PASSWORD_ENCODER.setIterations(HASH_ITERATIONS);
+        private ShaPasswordEncoder passwordEncoder;
+    private SecurityConfig securityConfig;
+
+    @Autowired
+    public DefaultHasher(SecurityConfig config) {
+
+        passwordEncoder = new ShaPasswordEncoder(256);
+        passwordEncoder.setIterations(config.getHashIterations());
+        this.securityConfig = config;
     }
-    
     
      /**
      * Hash the password using salt values
@@ -63,13 +66,13 @@ public class DefaultHasher implements Hasher {
      */
     @Override
     public String hashPassword(String uuid, String passwordToHash) throws Exception {
-        return hashToken(passwordToHash, uuid + HASH_SALT );
+        return hashToken(passwordToHash, uuid + securityConfig.getSalt());
     }
 
 
     private String hashToken(String token, String salt) throws Exception {
 
-        return PASSWORD_ENCODER.encodePassword(token,salt);
+        return passwordEncoder.encodePassword(token, salt);
 
     }
 

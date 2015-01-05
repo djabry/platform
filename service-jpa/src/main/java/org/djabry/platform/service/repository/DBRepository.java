@@ -20,37 +20,15 @@
  * THE SOFTWARE.
  */
 
-package org.djabry.platform.service.security;
+package org.djabry.platform.service.repository;
 
-import lombok.extern.java.Log;
-import org.djabry.platform.persistence.jpa.entity.DBUser;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.AuditorAware;
-import org.springframework.stereotype.Service;
-
+import org.djabry.platform.persistence.jpa.entity.DBObject;
+import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import org.springframework.data.repository.NoRepositoryBean;
 
 /**
- * Created by djabry on 03/01/15.
- *
- * This service passes the currently logged in user to the audit log
+ * Created by djabry on 05/01/15.
  */
-
-@Service
-@Log
-public class DefaultAuditor implements AuditorAware<DBUser> {
-
-    @Autowired
-    private DefaultAuthenticationService authenticationService;
-
-
-    @Override
-    public DBUser getCurrentAuditor() {
-        DBUser currentUser = authenticationService.getCurrentUser();
-        log.info("Found "+currentUser+" is logged in");
-        return currentUser;
-    }
-
-
-
-
+@NoRepositoryBean
+public interface DBRepository<D extends DBObject> extends QueryDslPredicateExecutor<D> {
 }

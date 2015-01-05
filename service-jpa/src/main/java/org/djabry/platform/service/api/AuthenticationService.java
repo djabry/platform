@@ -25,6 +25,9 @@ package org.djabry.platform.service.api;
 import org.djabry.platform.domain.api.SecurityToken;
 import org.djabry.platform.domain.api.SignUpRequest;
 import org.djabry.platform.domain.api.User;
+import org.djabry.platform.domain.api.annotations.Password;
+import org.djabry.platform.domain.api.annotations.Username;
+import org.djabry.platform.service.security.annotations.Authenticate;
 
 import javax.validation.constraints.NotNull;
 
@@ -37,32 +40,34 @@ import javax.validation.constraints.NotNull;
 public interface AuthenticationService<U extends User> {
 
     /**
+     * This method is to enable a normal user/administrator to log in
      * @param username The username of the account
      * @param password The unencrypted password to log in with
      * @return The authentication token associated with the session
      */
-    SecurityToken<U> login(@NotNull String username,@NotNull String password);
+
+    SecurityToken<U> login(@Username String username, @Password String password);
 
 
-    SecurityToken<U> signUp(SignUpRequest request);
+    //@Authenticate
+    SecurityToken<U> signUp(@NotNull SignUpRequest request);
     
 
     /**
      * @param resetPasswordToken The token for resetting the password
      * @param newPassword The new unencrypted password
      */
-    boolean changePassword(@NotNull SecurityToken<U> resetPasswordToken,@NotNull String newPassword);
-
+    @Authenticate
+    boolean resetPassword(@NotNull SecurityToken<U> resetPasswordToken, @Password String newPassword);
+    
 
     /**
      *
-     * Change the current account password
-     *
+     * Request a token to reset the password of the current user
      * @param oldPassword The old unencrypted password
-     * @param newPassword The unencrypted password to change to
      *
      */
-    boolean changePassword(@NotNull String oldPassword,@NotNull String newPassword);
+    SecurityToken<U> requestPasswordResetToken(@Password String oldPassword);
 
 
     /**
@@ -74,6 +79,7 @@ public interface AuthenticationService<U extends User> {
     /**
      * Log out of the current account
      */
+    @Authenticate
     boolean logout();
 
 }

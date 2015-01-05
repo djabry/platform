@@ -23,24 +23,22 @@
 package org.djabry.platform.domain.api;
 
 
+import org.djabry.platform.domain.api.annotations.Username;
 import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
-
-import javax.validation.constraints.NotNull;
 
 /**
  *  The interface used to identify a user domain object
  */
-public interface User<U extends User> extends DomainObject<U>{
+public interface User<U extends User> extends DomainObject<U, Long> {
 
     /**
      * @return The username
      */
-    @NotNull
-    @NotBlank
+
+    @Username
     String getUsername();
 
-    void setUsername(@NotNull @NotBlank String username);
+    void setUsername(@Username String username);
 
 
     /**

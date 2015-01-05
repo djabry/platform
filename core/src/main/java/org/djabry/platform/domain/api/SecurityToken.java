@@ -22,6 +22,8 @@
 
 package org.djabry.platform.domain.api;
 
+import org.djabry.platform.domain.api.annotations.UUID;
+
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -32,7 +34,10 @@ import java.util.Date;
  *
  * @param <U> The type of user associated with the token
  */
-public interface SecurityToken<U extends User> extends DomainObject<U>{
+public interface SecurityToken<U extends User> extends DomainObject<U, String> {
+
+    @UUID
+    String getId();
 
     /**
      * @return The user associated with the token

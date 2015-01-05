@@ -21,8 +21,8 @@
   ~ THE SOFTWARE.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>platform-parent</artifactId>
@@ -79,7 +79,6 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.djabry</groupId>
             <artifactId>platform-core</artifactId>
@@ -89,11 +88,14 @@
             <groupId>com.mysema.querydsl</groupId>
             <artifactId>querydsl-apt</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.mysema.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>
-
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -102,12 +104,12 @@
         <plugins>
             <plugin>
                 <groupId>com.mysema.maven</groupId>
-                <artifactId>maven-apt-plugin</artifactId>
-                <version>1.0</version>
+                <artifactId>apt-maven-plugin</artifactId>
+                <version>1.1.3</version>
                 <executions>
                     <execution>
-                        <phase>generate-sources</phase>
                         <goals>
+                            <goal>test-process</goal>
                             <goal>process</goal>
                         </goals>
                         <configuration>

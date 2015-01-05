@@ -22,23 +22,22 @@
 
 package org.djabry.platform.domain.api;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @author djabry
  *
  * The root domain object interface
  */
-public interface DomainObject<U extends User> extends Auditable<U>{
+public interface DomainObject<U extends User, ID extends Serializable> extends Auditable<U> {
 
     /**
      * @return The id of the object
      */
+
     @NotNull
-    @NotBlank
-    String getId();
+    ID getId();
 
 
 

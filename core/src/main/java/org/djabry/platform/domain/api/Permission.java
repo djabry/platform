@@ -29,6 +29,7 @@ package org.djabry.platform.domain.api;
  */
 public enum Permission {
 
+    AUTHENTICATE("PERM_AUTHENTICATE"),
     CREATE_OWN("PERM_CREATE_OWN"),
     READ_OWN("PERM_READ_OWN"),
     UPDATE_OWN("PERM_UPDATE_OWN"),
@@ -38,10 +39,11 @@ public enum Permission {
     UPDATE_ANY("PERM_UPDATE_ANY"),
     DELETE_ANY("PERM_DELETE_ANY");
 
+
+    private final String permissionName;
     Permission(String name){
         permissionName = name;
     }
-    private final String permissionName;
 
 
 }

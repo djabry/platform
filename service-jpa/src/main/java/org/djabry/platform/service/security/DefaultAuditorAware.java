@@ -20,43 +20,38 @@
  * THE SOFTWARE.
  */
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package org.djabry.platform.service.security;
 
-package org.djabry.platform.service.config;
-
+import lombok.extern.java.Log;
+import org.djabry.platform.persistence.jpa.entity.DBUser;
 import org.djabry.platform.service.api.AuthenticationService;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.djabry.platform.service.security.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.stereotype.Service;
+
 
 /**
+ * Created by djabry on 03/01/15.
  *
- * @author djabry
+ * This service passes the currently logged in user to the audit log
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@WebAppConfiguration
-@ContextConfiguration
-public class AuthenticationServiceTest {
-    
+
+@Service
+@Log
+public class DefaultAuditorAware implements AuditorAware<DBUser> {
+
+    @Autowired
+    SecurityConfig securityConfig;
     @Autowired
     private AuthenticationService authenticationService;
 
-    @Test
-    public void testLogin(){
-        
-        System.out.println("Running test");
-        
+    @Override
+    public DBUser getCurrentAuditor() {
+        return (DBUser) authenticationService.getCurrentUser();
     }
-    
-    
-    
-    
-    
+
+
+
+
 }

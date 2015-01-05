@@ -51,14 +51,21 @@ public class DefaultPermissionMapper implements PermissionMapper {
    public void setupMap(){
        
        m = Maps.newLinkedHashMap();
-       
-       Set<Permission> userPermissions = Sets.newLinkedHashSet();
+
+       Set<Permission> appPermissions = Sets.newLinkedHashSet();
+       appPermissions.add(Permission.AUTHENTICATE);
+       m.put(Role.APPLICATION, appPermissions);
+
+
+       Set<Permission> userPermissions = Sets.newLinkedHashSet(appPermissions);
        userPermissions.add(Permission.READ_OWN);
        userPermissions.add(Permission.CREATE_OWN);
        userPermissions.add(Permission.UPDATE_OWN);
        userPermissions.add(Permission.DELETE_OWN);
        
        m.put(Role.USER, userPermissions);
+
+       m.put(Role.APPLICATION, appPermissions);
        
        Set<Permission> adminPermissions = Sets.newLinkedHashSet(userPermissions);
        adminPermissions.add(Permission.READ_ANY);
@@ -67,7 +74,8 @@ public class DefaultPermissionMapper implements PermissionMapper {
        adminPermissions.add(Permission.UPDATE_ANY);
 
        m.put(Role.ADMINISTRATOR, adminPermissions);
-       
+
+
    }
 
     @Override
