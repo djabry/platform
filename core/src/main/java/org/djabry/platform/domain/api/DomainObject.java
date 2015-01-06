@@ -22,7 +22,6 @@
 
 package org.djabry.platform.domain.api;
 
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -36,7 +35,7 @@ public interface DomainObject<U extends User, ID extends Serializable> extends A
      * @return The id of the object
      */
 
-    @NotNull
+    //@NotNull
     ID getId();
 
 

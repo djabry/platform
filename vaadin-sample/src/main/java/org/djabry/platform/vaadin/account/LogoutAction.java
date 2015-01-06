@@ -6,6 +6,7 @@
 package org.djabry.platform.vaadin.account;
 
 import com.vaadin.ui.UI;
+import org.djabry.platform.service.api.AuthenticationService;
 import org.djabry.platform.vaadin.presenter.Sections;
 import org.djabry.platform.vaadin.view.LoginView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import org.vaadin.spring.UIScope;
 import org.vaadin.spring.VaadinComponent;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.events.EventScope;
-import org.vaadin.spring.security.Security;
 import org.vaadin.spring.stuff.sidebar.SideBarItem;
 
 /**
@@ -30,11 +30,11 @@ public class LogoutAction implements Runnable {
     private EventBus eventBus;
 
     @Autowired
-    private Security security;
+    private AuthenticationService authenticationService;
 
 
     public void run() {
-        security.logout();
+        authenticationService.logout();
 
         AccountEvent accountEvent = new AccountEvent();
         accountEvent.setAuthenticated(false);

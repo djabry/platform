@@ -79,7 +79,7 @@ public class BannerView extends HorizontalLayout implements SampleView {
 
     private Component buildTitle() {
 
-        Label t = new Label("CrowdEmotion Admin Dashboard");
+        Label t = new Label("Test Dashboard");
         t.addStyleName(ValoTheme.LABEL_H1);
 
         return t;

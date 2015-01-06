@@ -57,9 +57,13 @@ public class DefaultUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         BooleanExpression expression = QDBUserAccount.dBUserAccount.user.username.eq(username);
-        DBUserAccount userSecurity = userDBRepository.findOne(expression);
-        UserDetails userDetails = userDetailsFactory.from(userSecurity);
-        return userDetails;
+        DBUserAccount account = userDBRepository.findOne(expression);
+
+        if (account != null) {
+            UserDetails userDetails = userDetailsFactory.from(account);
+            return userDetails;
+        }
+        throw new UsernameNotFoundException(username + " does not exist!");
 
     }
 }

@@ -5,12 +5,18 @@
  */
 package org.djabry.platform.vaadin.config;
 
+import org.djabry.platform.service.security.config.MethodSecurityConfig;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.vaadin.spring.security.EnableVaadinSecurity;
+import org.vaadin.spring.stuff.sidebar.EnableSideBar;
 
 /**
  * @author djabry
@@ -20,6 +26,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan(basePackages = {"org.djabry"})
 @EnableAsync
 @EnableScheduling
+@EnableSideBar
+@EnableVaadinSecurity
+@EnableAutoConfiguration
+@Import(MethodSecurityConfig.class)
+@Order(1)
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 

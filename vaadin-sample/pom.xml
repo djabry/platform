@@ -26,6 +26,16 @@
             <url>http://maven.vaadin.com/vaadin-addons</url>
         </repository>
         <repository>
+            <id>vaadin-snapshots</id>
+            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
             <id>sonatype-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
             <snapshots>
@@ -35,7 +45,30 @@
                 <enabled>false</enabled>
             </releases>
         </repository>
+        <repository>
+            <id>github-snapshots</id>
+            <name>Vaadin4Spring</name>
+            <url>https://raw.githubusercontent.com/markoradinovic/mvn-repo/snapshot/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>vaadin-snapshots</id>
+            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencies>
         <dependency>
@@ -60,11 +93,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gdata</groupId>
-            <artifactId>core</artifactId>
-            <version>1.47.1</version>
         </dependency>
         <dependency>
             <groupId>org.vaadin.spring</groupId>
@@ -105,37 +133,101 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-batch</artifactId>
-            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <scope>compile</scope>
+
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <scope>compile</scope>
         </dependency>
+
+
+        <!--        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.3.2</version>
+          </dependency>
+          <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.3.2</version>
+          </dependency>
+          <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.3.2</version>
+          </dependency>-->
+
+        <!--   <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-jetty</artifactId>
+               <exclusions>
+                   <exclusion>
+                       <artifactId>websocket-server</artifactId>
+                       <groupId>org.eclipse.jetty.websocket</groupId>
+                   </exclusion>
+                   <exclusion>
+                       <artifactId>javax-websocket-server-impl</artifactId>
+                       <groupId>org.eclipse.jetty.websocket</groupId>
+                   </exclusion>
+               </exclusions>
+           </dependency>-->
+        <!--  <dependency>
+              <groupId>org.eclipse.jetty</groupId>
+              <artifactId>jetty-servlets</artifactId>
+          </dependency>
+          <dependency>
+              <groupId>org.eclipse.jetty</groupId>
+              <artifactId>jetty-jndi</artifactId>
+          </dependency>-->
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat6-maven-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -145,50 +237,50 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${vaadin.version}</version>
-                <configuration>
-                    <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
-                    <runTarget>mobilemail</runTarget>
-                    <!--                     We are doing "inplace" but into subdir VAADIN/widgetsets. This
-                    way compatible with Vaadin eclipse plugin. -->
-                    <webappDirectory>${basedir}/src/main/webapp/VAADIN/widgetsets
-                    </webappDirectory>
-                    <hostedWebapp>${basedir}/src/main/webapp/VAADIN/widgetsets
-                    </hostedWebapp>
-                    <!--                     Most Vaadin apps don't need this stuff, guide that to target -->
-                    <persistentunitcachedir>${project.build.directory}</persistentunitcachedir>
-                    <deploy>${project.build.directory}/gwt-deploy</deploy>
-                    <!--                     Compile report is not typically needed either, saves hunreds of mb disk -->
-                    <compileReport>false</compileReport>
-                    <noServer>true</noServer>
-                    <!--                     Remove draftCompile when project is ready -->
-                    <draftCompile>false</draftCompile>
+            <!-- <plugin>
+                 <groupId>com.vaadin</groupId>
+                 <artifactId>vaadin-maven-plugin</artifactId>
+                 <version>${vaadin.version}</version>
+                 <configuration>
+                     <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+                     <runTarget>mobilemail</runTarget>
+                     &lt;!&ndash;                     We are doing "inplace" but into subdir VAADIN/widgetsets. This
+                     way compatible with Vaadin eclipse plugin. &ndash;&gt;
+                     <webappDirectory>${basedir}/src/main/webapp/VAADIN/widgetsets
+                     </webappDirectory>
+                     <hostedWebapp>${basedir}/src/main/webapp/VAADIN/widgetsets
+                     </hostedWebapp>
+                     &lt;!&ndash;                     Most Vaadin apps don't need this stuff, guide that to target &ndash;&gt;
+                     <persistentunitcachedir>${project.build.directory}</persistentunitcachedir>
+                     <deploy>${project.build.directory}/gwt-deploy</deploy>
+                     &lt;!&ndash;                     Compile report is not typically needed either, saves hunreds of mb disk &ndash;&gt;
+                     <compileReport>false</compileReport>
+                     <noServer>true</noServer>
+                     &lt;!&ndash;                     Remove draftCompile when project is ready &ndash;&gt;
+                     <draftCompile>false</draftCompile>
 
-                    <style>OBF</style>
-                    <strict>true</strict>
-                    <runTarget>http://localhost:8080/admin</runTarget>
-                </configuration>
-                <executions>
-                    <execution>
-                        <configuration>
-                            <!--                             if you don't specify any modules, the plugin will find them
-                             <modules> <module>com.vaadin.demo.mobilemail.gwt.ColorPickerWidgetSet</module>
-                            </modules> -->
-                        </configuration>
-                        <goals>
-                            <goal>clean</goal>
-                            <goal>resources</goal>
-                            <goal>update-theme</goal>
-                            <goal>update-widgetset</goal>
-                            <goal>compile-theme</goal>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+                     <style>OBF</style>
+                     <strict>true</strict>
+                     <runTarget>http://localhost:8080/admin</runTarget>
+                 </configuration>
+                 <executions>
+                     <execution>
+                         <configuration>
+                             &lt;!&ndash;                             if you don't specify any modules, the plugin will find them
+                              <modules> <module>com.vaadin.demo.mobilemail.gwt.ColorPickerWidgetSet</module>
+                             </modules> &ndash;&gt;
+                         </configuration>
+                         <goals>
+                             <goal>clean</goal>
+                             <goal>resources</goal>
+                             <goal>update-theme</goal>
+                             <goal>update-widgetset</goal>
+                             <goal>compile-theme</goal>
+                             <goal>compile</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+             </plugin>-->
 
 
         </plugins>

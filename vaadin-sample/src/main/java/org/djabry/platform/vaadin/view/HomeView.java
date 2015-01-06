@@ -7,7 +7,7 @@ package org.djabry.platform.vaadin.view;
 
 
 import com.vaadin.navigator.ViewChangeListener;
-import org.djabry.platform.service.security.annotations.CreateAny;
+import org.djabry.platform.service.security.annotations.ReadOwn;
 import org.vaadin.spring.UIScope;
 import org.vaadin.spring.navigator.VaadinView;
 
@@ -16,7 +16,7 @@ import org.vaadin.spring.navigator.VaadinView;
  */
 @UIScope
 @VaadinView(name = HomeView.VIEW_NAME)
-@CreateAny
+@ReadOwn
 public class HomeView extends BaseMainViewAbstr {
     public static final String VIEW_NAME = "home";
 

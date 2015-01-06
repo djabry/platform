@@ -6,7 +6,7 @@
 package org.djabry.platform.vaadin.presenter;
 
 
-import org.djabry.platform.service.security.annotations.CreateAny;
+import org.djabry.platform.service.security.annotations.ReadOwn;
 import org.djabry.platform.vaadin.view.HomeView;
 import org.vaadin.spring.events.Event;
 import org.vaadin.spring.events.EventBusListenerMethod;
@@ -17,7 +17,7 @@ import org.vaadin.spring.navigator.VaadinPresenter;
  * @author djabry
  */
 @VaadinPresenter(viewName = HomeView.VIEW_NAME)
-@CreateAny
+@ReadOwn
 public class HomePresenter extends SamplePresenter<HomeView> {
 
     @EventBusListenerMethod(scope = EventScope.SESSION, filter = StartupFilter.class)

@@ -29,6 +29,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by djabry on 05/01/15.
  */
@@ -38,8 +40,8 @@ public class UserDetailsFactory {
     
     @Autowired
     private PermissionMapper permissionMapper;
-    
-    public UserDetails from(UserAccount userAccount){
+
+    public UserDetails from(@NotNull UserAccount userAccount) {
         return new DefaultUserDetails(userAccount,permissionMapper);
         
     }

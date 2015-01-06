@@ -27,6 +27,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.djabry.platform.domain.api.Group;
 import org.djabry.platform.domain.api.Permission;
 import org.djabry.platform.domain.api.UserAccount;
 import org.djabry.platform.service.api.PermissionMapper;
@@ -35,7 +36,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.annotation.Nullable;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -46,7 +49,16 @@ import java.util.Set;
 @Data
 public class DefaultUserDetails implements UserDetails{
 
+    static final Function<Permission, GrantedAuthority> PERMISSION_CONVERTER = new Function<Permission, GrantedAuthority>() {
+        @Nullable
+        @Override
+        public GrantedAuthority apply(Permission permission) {
+            return new SimpleGrantedAuthority(permission.permissionName);
+        }
+    };
+    @NotNull
     private final UserAccount userAccount;
+    @NotNull
     private final PermissionMapper permissionMapper;
 
     /**
@@ -57,16 +69,16 @@ public class DefaultUserDetails implements UserDetails{
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<Permission> permissions = permissionMapper.mapPermissions(userAccount.getRole());
-        return Sets.newLinkedHashSet(Iterables.transform(permissions,PERMISSION_CONVERTER));
-    }
-    
-    static final Function<Permission,GrantedAuthority> PERMISSION_CONVERTER = new Function<Permission,GrantedAuthority>(){
-        @Nullable
-        @Override
-        public GrantedAuthority apply(Permission permission) {
-            return new SimpleGrantedAuthority(permission.name());
+
+        Set<GrantedAuthority> authorities = Sets.newLinkedHashSet(Iterables.transform(permissions, PERMISSION_CONVERTER));
+        Iterator<Group> iterator = userAccount.getGroups().iterator();
+        while (iterator.hasNext()) {
+            Group next = iterator.next();
+            Iterables.addAll(authorities, Iterables.transform(next.getPermissions(), PERMISSION_CONVERTER));
         }
-    };
+
+        return authorities;
+    }
 
     /**
      * Returns the password used to authenticate the user.

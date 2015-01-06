@@ -40,7 +40,7 @@ public enum Permission {
     DELETE_ANY("PERM_DELETE_ANY");
 
 
-    private final String permissionName;
+    public final String permissionName;
     Permission(String name){
         permissionName = name;
     }

@@ -28,9 +28,13 @@
 
 package org.djabry.platform.service;
 
+import org.djabry.platform.domain.api.Permission;
 import org.djabry.platform.domain.api.SecurityToken;
+import org.djabry.platform.persistence.jpa.entity.DBUserAccount;
+import org.djabry.platform.persistence.jpa.entity.QDBUserAccount;
 import org.djabry.platform.service.api.AuthenticationService;
 import org.djabry.platform.service.api.Hasher;
+import org.djabry.platform.service.api.PermissionMapper;
 import org.djabry.platform.service.config.TestConfig;
 import org.djabry.platform.service.config.TestInitializer;
 import org.djabry.platform.service.repository.AccountRepository;
@@ -46,10 +50,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.transaction.Transactional;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.UUID;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 
 /**
@@ -75,6 +80,8 @@ public class AuthenticationServiceTest {
 
     @Autowired
     private Hasher hasher;
+    @Autowired
+    private PermissionMapper mapper;
 
     @Before
     @Transactional
@@ -96,7 +103,6 @@ public class AuthenticationServiceTest {
         SecurityToken securityToken = authenticationService.signUp(request);
         assertNotNull("Failed to create a new account", securityToken);
     }
-   
 
     @Test
     public void testLogin(){
@@ -124,6 +130,25 @@ public class AuthenticationServiceTest {
 
         assertNotNull(hashedPassword);
         assertEquals("Hashed passwords don't match", hashedPassword, hashedPassword2);
+
+    }
+
+    @Test
+    public void testGetPermissions() {
+        System.out.println("Finding John's permissions");
+        this.testSignUp();
+        DBUserAccount john = this.accountRepository.findOne(QDBUserAccount.dBUserAccount.user.username.eq("john"));
+        assertNotNull("User account not found", john);
+        Set<Permission> permissions = mapper.mapPermissions(john.getRole());
+        assertNotNull("Permissions are empty", permissions);
+
+        assertTrue("Wrong number of permissions", permissions.size() > 3);
+
+        Iterator<Permission> iterator = permissions.iterator();
+        while (iterator.hasNext()) {
+            Permission next = iterator.next();
+            System.out.println(next);
+        }
 
     }
 
