@@ -3,5 +3,6 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/service-jpa/src/test/java/org/djabry/platform/service/config/TestConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-jpa/src/test/java/org/djabry/platform/service/config/TestInitializer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vaadin-sample" charset="UTF-8" />
   </component>
 </project>

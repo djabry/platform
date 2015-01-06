@@ -25,12 +25,14 @@
         <module name="platform-core" />
         <module name="platform-persistence-jpa" />
         <module name="platform-service-jpa" />
+        <module name="platform-vaadin-sample" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="platform-core" target="1.7" />
       <module name="platform-persistence-jpa" target="1.7" />
       <module name="platform-service-jpa" target="1.7" />
+      <module name="platform-vaadin-sample" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -34,6 +34,7 @@
         <module>core</module>
         <module>persistence-jpa</module>
         <module>service-jpa</module>
+        <module>vaadin-sample</module>
     </modules>
 
     <properties>

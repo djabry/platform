@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform-parent.iml" filepath="$PROJECT_DIR$/platform-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/persistence-jpa/platform-persistence-jpa.iml" filepath="$PROJECT_DIR$/persistence-jpa/platform-persistence-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/service-jpa/platform-service-jpa.iml" filepath="$PROJECT_DIR$/service-jpa/platform-service-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vaadin-sample/platform-vaadin-sample.iml" filepath="$PROJECT_DIR$/vaadin-sample/platform-vaadin-sample.iml" />
     </modules>
   </component>
 </project>
