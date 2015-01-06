@@ -69,8 +69,8 @@ public class DefaultAuthenticationService implements AuthenticationService<DBUse
     private DBUser currentUser;
     @Autowired
     private AuthenticationProvider authProvider;
-    @Autowired
-    private ApplicationAccount account;
+    //@Autowired
+    //private ApplicationAccount account;
 
     /**
      * @param username The username of the account
@@ -224,7 +224,8 @@ public class DefaultAuthenticationService implements AuthenticationService<DBUse
     @Override
     public boolean logout() {
 
-        account.signIn();
+        SecurityContextHolder.getContext().setAuthentication(null);
+        //account.signIn();
         return true;
     }
 
