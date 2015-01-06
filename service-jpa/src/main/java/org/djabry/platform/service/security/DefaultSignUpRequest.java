@@ -11,7 +11,7 @@ import org.hibernate.validator.constraints.Email;
  */
 
 @Data
-public class DefaultSignupRequest implements SignUpRequest {
+public class DefaultSignUpRequest implements SignUpRequest {
 
     /**
      * The requested username
