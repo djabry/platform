@@ -14,7 +14,6 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-import org.djabry.platform.vaadin.navigation.SecuredNavigator;
 import org.djabry.platform.vaadin.presenter.Action;
 import org.djabry.platform.vaadin.presenter.BannerPresenter;
 import org.djabry.platform.vaadin.presenter.SideBarPresenter;
@@ -26,7 +25,6 @@ import org.vaadin.spring.VaadinUI;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.events.EventScope;
 import org.vaadin.spring.navigator.SpringViewProvider;
-import org.vaadin.spring.security.Security;
 
 import javax.annotation.PostConstruct;
 
@@ -54,8 +52,6 @@ public class MainUI extends UI {
     @Autowired
     private SideBarPresenter sideBarPresenter;
 
-    @Autowired
-    private Security security;
 
     private VerticalLayout body;
 
@@ -78,7 +74,7 @@ public class MainUI extends UI {
         body = new VerticalLayout();
         body.setSizeFull();
 
-        Navigator navigator = new SecuredNavigator(this, body, security);
+        Navigator navigator = new Navigator(this, body);
         navigator.addProvider(vP);
 
 
