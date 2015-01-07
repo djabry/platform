@@ -14,7 +14,8 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.djabry.platform.vaadin.account.LoginAction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.vaadin.spring.UIScope;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.vaadin.spring.navigator.VaadinView;
 
 import javax.annotation.PostConstruct;
@@ -23,7 +24,7 @@ import javax.annotation.PostConstruct;
  * @author djabry
  */
 
-@UIScope
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @VaadinView(name = LoginView.VIEW_NAME)
 public class LoginView extends BaseMainViewAbstr {
 

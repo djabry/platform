@@ -76,6 +76,11 @@
             <artifactId>platform-service-jpa</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-push</artifactId>
+            <version>${vaadin.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>

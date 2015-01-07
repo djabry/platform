@@ -35,12 +35,29 @@ public abstract class BaseMainViewAbstr extends VerticalLayout implements Sample
 
     public String getTitle() {
 
-        String title = this.getViewName();
-        if (title.length() > 1) {
-            title = title.substring(0, 1).toUpperCase() + title.substring(1).toLowerCase();
+        String viewName = this.getViewName();
+        String title = viewName;
+        if (title != null) {
+            title = "";
+            for (String titleWord : this.getViewName().split("_")) {
+                title += processTitleWord(titleWord);
+                title += " ";
+            }
+
+            title = title.trim();
         }
 
+
         return title;
+    }
+
+    private String processTitleWord(String word) {
+        //Capitalise each title word
+        if (word.length() > 1) {
+            word = word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+        }
+
+        return word;
     }
 
     public String getViewName() {

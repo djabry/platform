@@ -28,6 +28,7 @@ import org.djabry.platform.domain.api.User;
 import org.djabry.platform.domain.api.annotations.Password;
 import org.djabry.platform.domain.api.annotations.Username;
 import org.djabry.platform.service.security.annotations.Authenticate;
+import org.djabry.platform.service.security.annotations.ReadOwn;
 
 import javax.validation.constraints.NotNull;
 
@@ -67,12 +68,14 @@ public interface AuthenticationService<U extends User> {
      * @param oldPassword The old unencrypted password
      *
      */
+    @ReadOwn
     SecurityToken<U> requestPasswordResetToken(@Password String oldPassword);
 
 
     /**
      * @return The current logged in user
      */
+    @ReadOwn
     U getCurrentUser();
 
 

@@ -72,7 +72,7 @@ public class DBUserAccount extends DBObject<String> implements UserAccount<DBUse
      * The groups associated with the user
      *
      */
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<DBGroup> groups = Sets.newHashSet();
 
     @Column
