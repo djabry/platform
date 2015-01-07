@@ -26,6 +26,7 @@ import javax.annotation.PostConstruct;
 
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @VaadinView(name = LoginView.VIEW_NAME)
+@SuppressWarnings("serial")
 public class LoginView extends BaseMainViewAbstr {
 
     public static final String VIEW_NAME = "login";

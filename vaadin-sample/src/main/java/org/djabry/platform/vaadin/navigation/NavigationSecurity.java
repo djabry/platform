@@ -21,6 +21,9 @@ import java.util.Set;
 
 /**
  * Created by djabry on 07/01/15.
+ *
+ * This class listens to view changes and stops navigation to any views that are not authorized
+ *
  */
 
 @UIScope

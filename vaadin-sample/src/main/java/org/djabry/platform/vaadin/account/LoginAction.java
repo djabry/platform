@@ -40,10 +40,9 @@ public class LoginAction {
             accountEvent.setAuthenticated(authentication.isAuthenticated());
         }
 
-        eventBus.publish(EventScope.SESSION, this, accountEvent);
 
         UI.getCurrent().getNavigator().navigateTo(HomeView.VIEW_NAME);
-
+        eventBus.publish(EventScope.SESSION, this, accountEvent);
 
     }
 

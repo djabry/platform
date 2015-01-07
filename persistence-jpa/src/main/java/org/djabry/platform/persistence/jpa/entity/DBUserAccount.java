@@ -39,9 +39,7 @@ import java.util.UUID;
 
 @Data
 @Entity
-//@RegisteredEntity
 @EqualsAndHashCode(callSuper = true)
-//@AttributeOverride(name="id",column = @Column(length=32))
 public class DBUserAccount extends DBObject<String> implements UserAccount<DBUser, DBGroup> {
 
     @Id

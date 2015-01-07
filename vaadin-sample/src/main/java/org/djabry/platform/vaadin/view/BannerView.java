@@ -49,29 +49,14 @@ public class BannerView extends HorizontalLayout implements SampleView {
 
     @PostConstruct
     public void initView() {
-        //loginForm = this.buildLoginForm();
-
         title = buildTitle();
         logoutButton = this.buildLogoutButton();
-
         this.addComponent(title);
-
-        //this.setComponentAlignment(title, Alignment.MIDDLE_LEFT);
         this.addComponent(title);
-
-
         this.addComponent(logoutButton);
-
-
         this.setComponentAlignment(logoutButton, Alignment.BOTTOM_RIGHT);
-        //title.setHeight(70, Unit.PIXELS);
         this.setExpandRatio(title, 1);
-
-        //this.addStyleName(ValoTheme.LAYOUT_WELL);
         this.addStyleName(ValoTheme.MENU_TITLE);
-        //this.setSpacing(true);
-        //this.setMargin(true);
-
         this.setWidth("100%");
 
 

@@ -7,6 +7,7 @@ package org.djabry.platform.vaadin.account;
 
 import com.vaadin.ui.UI;
 import org.djabry.platform.service.api.AuthenticationService;
+import org.djabry.platform.service.api.DomainServices;
 import org.djabry.platform.vaadin.presenter.Sections;
 import org.djabry.platform.vaadin.view.LoginView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +24,15 @@ import org.vaadin.spring.stuff.sidebar.SideBarItem;
 @VaadinComponent
 @UIScope
 @SideBarItem(sectionId = Sections.ACCOUNT, caption = "Sign out")
-//@FontAwesomeIcon(FontAwesome.SIGN_OUT)
 public class LogoutAction implements Runnable {
 
     @Autowired
     private EventBus eventBus;
 
-    @Autowired
-    private AuthenticationService authenticationService;
-
-
     public void run() {
+
+        DomainServices sP = DomainServices.getInstance();
+        AuthenticationService authenticationService = sP.findService(AuthenticationService.class);
         authenticationService.logout();
 
         AccountEvent accountEvent = new AccountEvent();

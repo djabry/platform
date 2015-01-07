@@ -24,7 +24,7 @@ package org.djabry.platform.service.security;
 
 import lombok.extern.java.Log;
 import org.djabry.platform.persistence.jpa.entity.DBUser;
-import org.djabry.platform.service.api.AuthenticationService;
+import org.djabry.platform.service.api.SpringAuthenticationService;
 import org.djabry.platform.service.security.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.AuditorAware;
@@ -44,11 +44,11 @@ public class DefaultAuditorAware implements AuditorAware<DBUser> {
     @Autowired
     SecurityConfig securityConfig;
     @Autowired
-    private AuthenticationService authenticationService;
+    private SpringAuthenticationService springAuthenticationService;
 
     @Override
     public DBUser getCurrentAuditor() {
-        return (DBUser) authenticationService.getCurrentUser();
+        return (DBUser) springAuthenticationService.getCurrentUser();
     }
 
 

@@ -17,6 +17,7 @@ import org.vaadin.spring.navigator.VaadinPresenter;
  * @author djabry
  */
 @VaadinPresenter(viewName = HomeView.VIEW_NAME)
+@SuppressWarnings("serial")
 @ReadOwn
 public class HomePresenter extends SamplePresenter<HomeView> {
 

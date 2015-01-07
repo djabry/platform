@@ -35,7 +35,6 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-//@RegisteredEntity
 public class DBUser extends DBObject<Long> implements User<DBUser> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id

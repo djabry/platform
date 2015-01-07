@@ -35,7 +35,7 @@ import java.util.Set;
  * Created by djabry on 03/01/15.
  */
 
-//@RegisteredEntity
+
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)

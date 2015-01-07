@@ -19,7 +19,7 @@ public class DevApplicationAccount extends BaseApplicationAccount {
         request.setEmail(securityConfig.getApplicationEmail());
         request.setPassword(securityConfig.getApplicationPassword());
         request.setUsername(securityConfig.getApplicationName());
-        this.authenticationService.signUp(request);
+        this.springAuthenticationService.signUp(request);
         this.signIn();
 
     }

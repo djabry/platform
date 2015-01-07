@@ -13,6 +13,7 @@ import org.vaadin.spring.navigator.VaadinPresenter;
  * @author djabry
  */
 @VaadinPresenter(viewName = LoginView.VIEW_NAME)
+@SuppressWarnings("serial")
 public class LoginPresenter extends SamplePresenter<LoginView> {
 
 }

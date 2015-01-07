@@ -14,14 +14,15 @@ import org.vaadin.spring.stuff.sidebar.SideBarSections;
  */
 @SideBarSections({
 
-        @SideBarSection(id = Sections.SETTINGS, caption = "Settings"),
+        @SideBarSection(id = Sections.GENERAL, caption = "General"),
         @SideBarSection(id = Sections.ACCOUNT, caption = "Account")
 })
 @Component
+@SuppressWarnings("serial")
 //@CreateAny
 public class Sections {
 
-    public static final String SETTINGS = "settings";
+    public static final String GENERAL = "general";
     public static final String ACCOUNT = "account";
 
 

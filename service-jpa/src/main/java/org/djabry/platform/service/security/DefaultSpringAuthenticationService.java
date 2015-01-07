@@ -27,8 +27,8 @@ import lombok.extern.java.Log;
 import org.djabry.platform.domain.api.SecurityToken;
 import org.djabry.platform.domain.api.SignUpRequest;
 import org.djabry.platform.persistence.jpa.entity.*;
-import org.djabry.platform.service.api.AuthenticationService;
 import org.djabry.platform.service.api.Hasher;
+import org.djabry.platform.service.api.SpringAuthenticationService;
 import org.djabry.platform.service.repository.AccountRepository;
 import org.djabry.platform.service.repository.SecurityTokenRepository;
 import org.djabry.platform.service.repository.UserRepository;
@@ -48,7 +48,7 @@ import javax.transaction.Transactional;
 @Service
 @Log
 @Transactional
-public class DefaultAuthenticationService implements AuthenticationService<DBUser> {
+public class DefaultSpringAuthenticationService implements SpringAuthenticationService<DBUser> {
 
     @Autowired
     private UserRepository userRepository;

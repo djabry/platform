@@ -15,6 +15,7 @@ import org.vaadin.spring.navigator.VaadinPresenter;
  */
 
 @VaadinPresenter(viewName = BannerView.VIEW_NAME)
+@SuppressWarnings("serial")
 public class BannerPresenter extends SamplePresenter<BannerView> {
 
 

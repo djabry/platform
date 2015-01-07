@@ -32,9 +32,9 @@ import org.djabry.platform.domain.api.Permission;
 import org.djabry.platform.domain.api.SecurityToken;
 import org.djabry.platform.persistence.jpa.entity.DBUserAccount;
 import org.djabry.platform.persistence.jpa.entity.QDBUserAccount;
-import org.djabry.platform.service.api.AuthenticationService;
 import org.djabry.platform.service.api.Hasher;
 import org.djabry.platform.service.api.PermissionMapper;
+import org.djabry.platform.service.api.SpringAuthenticationService;
 import org.djabry.platform.service.config.TestConfig;
 import org.djabry.platform.service.config.TestInitializer;
 import org.djabry.platform.service.repository.AccountRepository;
@@ -64,10 +64,10 @@ import static org.junit.Assert.*;
 @ContextConfiguration(classes = {TestInitializer.class, TestConfig.class})
 @ActiveProfiles(profiles = "dev")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class AuthenticationServiceTest {
+public class SpringAuthenticationServiceTest {
     
     @Autowired
-    private AuthenticationService authenticationService;
+    private SpringAuthenticationService springAuthenticationService;
 
     @Autowired
     private UserRepository userRepository;
@@ -100,7 +100,7 @@ public class AuthenticationServiceTest {
         request.setEmail("john@example.com");
         request.setPassword("test1");
 
-        SecurityToken securityToken = authenticationService.signUp(request);
+        SecurityToken securityToken = springAuthenticationService.signUp(request);
         assertNotNull("Failed to create a new account", securityToken);
     }
 
@@ -108,7 +108,7 @@ public class AuthenticationServiceTest {
     public void testLogin(){
 
         testSignUp();
-        SecurityToken login = authenticationService.login("john", "test1");
+        SecurityToken login = springAuthenticationService.login("john", "test1");
         assertNotNull("Failed to log in", login);
 
     }

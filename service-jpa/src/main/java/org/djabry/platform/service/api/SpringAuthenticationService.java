@@ -35,10 +35,10 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by djabry on 03/01/15.
  *
- * The interface to mark authentication services
+ * The interface to mark spring authentication
  *
  */
-public interface AuthenticationService<U extends User> {
+public interface SpringAuthenticationService<U extends User> extends AuthenticationService<U> {
 
     /**
      * This method is to enable a normal user/administrator to log in

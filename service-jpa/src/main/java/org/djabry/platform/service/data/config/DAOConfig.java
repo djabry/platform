@@ -71,7 +71,6 @@ public class DAOConfig {
     }
 
 
-
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 

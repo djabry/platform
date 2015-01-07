@@ -1,7 +1,7 @@
 package org.djabry.platform.service.security.config;
 
 import lombok.Data;
-import org.djabry.platform.service.api.AuthenticationService;
+import org.djabry.platform.service.api.SpringAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -12,7 +12,7 @@ public abstract class BaseSecurityConfig implements SecurityConfig {
     private final int hashIterations = 1000;
 
     @Autowired
-    private AuthenticationService authenticationService;
+    private SpringAuthenticationService springAuthenticationService;
 
 
 }

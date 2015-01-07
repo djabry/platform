@@ -19,6 +19,7 @@ import javax.annotation.PostConstruct;
  */
 
 @VaadinPresenter(viewName = SideBarView.VIEW_NAME)
+@SuppressWarnings("serial")
 public class SideBarPresenter extends SamplePresenter<SideBarView> {
 
     @Autowired

@@ -2,7 +2,7 @@ package org.djabry.platform.service.security;
 
 import lombok.extern.java.Log;
 import org.djabry.platform.domain.api.SecurityToken;
-import org.djabry.platform.service.api.AuthenticationService;
+import org.djabry.platform.service.api.SpringAuthenticationService;
 import org.djabry.platform.service.security.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Log
 public abstract class BaseApplicationAccount implements ApplicationAccount {
     @Autowired
-    protected AuthenticationService authenticationService;
+    protected SpringAuthenticationService springAuthenticationService;
 
     @Autowired
     protected SecurityConfig securityConfig;
@@ -22,7 +22,7 @@ public abstract class BaseApplicationAccount implements ApplicationAccount {
         String username = securityConfig.getApplicationName();
         String password = securityConfig.getApplicationPassword();
         log.info("Attempting to log in as application, username = " + username + ", password = " + password);
-        SecurityToken login = authenticationService.login(username, password);
+        SecurityToken login = springAuthenticationService.login(username, password);
 
         if (login == null) {
             log.severe("Failed to log in as application");

@@ -2,7 +2,7 @@ package org.djabry.platform.vaadin.config;
 
 import lombok.extern.java.Log;
 import org.djabry.platform.domain.api.SecurityToken;
-import org.djabry.platform.service.api.AuthenticationService;
+import org.djabry.platform.service.api.SpringAuthenticationService;
 import org.djabry.platform.service.profile.Dev;
 import org.djabry.platform.service.security.DefaultSignUpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import javax.annotation.PostConstruct;
 public class StartupUsersSignup {
 
     @Autowired
-    private AuthenticationService authenticationService;
+    private SpringAuthenticationService springAuthenticationService;
 
 
     @PostConstruct
@@ -29,7 +29,7 @@ public class StartupUsersSignup {
         request.setEmail("john@example.com");
         request.setUsername("johnexample");
         request.setPassword("password");
-        SecurityToken securityToken = authenticationService.signUp(request);
+        SecurityToken securityToken = springAuthenticationService.signUp(request);
         if (securityToken == null) {
             log.severe("Failed to sign up test users");
         } else {

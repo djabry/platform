@@ -24,7 +24,7 @@ package org.djabry.platform.service.security;
 
 import org.djabry.platform.domain.api.SecurityToken;
 import org.djabry.platform.persistence.jpa.entity.DBUser;
-import org.djabry.platform.service.api.AuthenticationService;
+import org.djabry.platform.service.api.SpringAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -42,7 +42,7 @@ import org.springframework.stereotype.Service;
 public class DefaultAuthenticationProvider implements AuthenticationProvider{
     
     @Autowired
-    AuthenticationService authenticationService;
+    SpringAuthenticationService springAuthenticationService;
     
     @Autowired
     DefaultUserDetailsService userDetailsService;
@@ -64,7 +64,7 @@ public class DefaultAuthenticationProvider implements AuthenticationProvider{
         String password = authentication.getCredentials().toString();
 
         UserDetails details = userDetailsService.loadUserByUsername(username);
-        SecurityToken<DBUser> token = authenticationService.login(username, password);
+        SecurityToken<DBUser> token = springAuthenticationService.login(username, password);
 
         if(token!=null){
             return new UsernamePasswordAuthenticationToken(username, password, details.getAuthorities());

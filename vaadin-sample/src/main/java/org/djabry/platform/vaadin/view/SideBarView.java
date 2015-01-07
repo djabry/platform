@@ -24,6 +24,7 @@ import javax.annotation.PostConstruct;
 
 @UIScope
 @VaadinView(name = SideBarView.VIEW_NAME)
+@SuppressWarnings("serial")
 public class SideBarView extends VerticalLayout implements SampleView {
 
     public static final String VIEW_NAME = "sidebar";
