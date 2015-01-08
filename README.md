@@ -15,6 +15,6 @@ This project demonstrates the use of global method security ([Spring security](h
 
 ## An even quicker start ##
 
-1. Launch in the cloud with Codenvy: <script type="text/javascript" src="https://codenvy.com/factory/resources/factory.js" style="gray" url="https://codenvy.com/f?id=br0pfe7louypkpvs"</script>
+1. Launch in the cloud with Codenvy: [](<script type="text/javascript" src="https://codenvy.com/factory/resources/factory.js" style="gray" url="https://codenvy.com/f?id=br0pfe7louypkpvs"</script>)
 2. Click run
 3. Log in as username: "john.smith" password: "password"
