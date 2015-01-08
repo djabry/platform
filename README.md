@@ -3,7 +3,7 @@ platform
 
 A flexible, modular and secure platform for building a range of java applications.
 
-This project demonstrates the use of global method security ([Spring security](http://projects.spring.io/spring-security/)) and [Vaadin](https://vaadin.com/home) with [Vaadin4Spring](https://github.com/peholmst/vaadin4spring) for web-based applications without the headache of js.
+This project demonstrates the use of global method security ([Spring security](http://projects.spring.io/spring-security/)) and [Vaadin](https://vaadin.com/home) with [vaadin4spring](https://github.com/peholmst/vaadin4spring) for web-based applications without the headache of js.
 
 ## Quick start ##
 
