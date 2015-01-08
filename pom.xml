@@ -27,7 +27,7 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>org.djabry</groupId>
+    <groupId>com.github.djabry</groupId>
     <artifactId>platform-parent</artifactId>
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
