@@ -16,5 +16,5 @@ This project demonstrates the use of global method security ([Spring security](h
 ## An even quicker start ##
 
 1. Launch in the cloud with [Codenvy](https://codenvy.com/f?id=br0pfe7louypkpvs)
-2. Click run
+2. Click Run > Run With > vaadin-sample-runner
 3. Log in as username: "john.smith" password: "password"
