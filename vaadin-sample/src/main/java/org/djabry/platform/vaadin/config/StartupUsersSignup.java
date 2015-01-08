@@ -27,7 +27,7 @@ public class StartupUsersSignup {
 
         DefaultSignUpRequest request = new DefaultSignUpRequest();
         request.setEmail("john@example.com");
-        request.setUsername("johnexample");
+        request.setUsername("johne.smith");
         request.setPassword("password");
         SecurityToken securityToken = springAuthenticationService.signUp(request);
         if (securityToken == null) {

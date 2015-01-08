@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbaf1e02-acf5-4009-9142-3ace04fa12d5" name="Default" comment="Created integration tests for applications implementing services">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_djabry_platform_persistence_jpa_0_1_SNAPSHOT.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_djabry_platform_persistence_jpa_1_0_SNAPSHOT.xml" />
+    <list default="true" id="dbaf1e02-acf5-4009-9142-3ace04fa12d5" name="Default" comment="Updated readme to include install info">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence-jpa/platform-persistence-jpa.iml" afterPath="$PROJECT_DIR$/persistence-jpa/platform-persistence-jpa.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/pom.xml" afterPath="$PROJECT_DIR$/core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence-jpa/pom.xml" afterPath="$PROJECT_DIR$/persistence-jpa/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service-jpa/pom.xml" afterPath="$PROJECT_DIR$/service-jpa/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vaadin-sample/pom.xml" afterPath="$PROJECT_DIR$/vaadin-sample/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/org/djabry/platform/vaadin/config/StartupUsersSignup.java" afterPath="$PROJECT_DIR$/vaadin-sample/src/main/java/org/djabry/platform/vaadin/config/StartupUsersSignup.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="platform-parent.iws" />
@@ -85,8 +77,18 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4558011" vertical-offset="0" max-vertical-offset="362">
-              <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.53867406" vertical-offset="0" max-vertical-offset="362">
+              <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="context.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/webapp/META-INF/context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -132,23 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthenticationServiceIT.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/org/djabry/platform/test/AuthenticationServiceIT.java">
+      <file leaf-file-name="StartupUsersSignup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/org/djabry/platform/vaadin/config/StartupUsersSignup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="1455">
-              <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IntegrationTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/org/djabry/platform/test/IntegrationTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="195">
-              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="193" max-vertical-offset="585">
+              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -170,7 +160,6 @@
         <option value="$PROJECT_DIR$/service-jpa/src/main/java/org/djabry/platform/service/security/UserDetailsFactory.java" />
         <option value="$PROJECT_DIR$/service-jpa/src/main/java/org/djabry/platform/service/security/DefaultUserDetailsService.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/org/djabry/platform/domain/api/DomainObject.java" />
-        <option value="$PROJECT_DIR$/vaadin-sample/src/main/java/org/djabry/platform/vaadin/config/StartupUsersSignup.java" />
         <option value="$PROJECT_DIR$/service-jpa/src/main/java/org/djabry/platform/service/security/BaseApplicationAccount.java" />
         <option value="$PROJECT_DIR$/vaadin-sample/src/main/java/org/djabry/platform/vaadin/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/service-jpa/src/main/java/org/djabry/platform/service/security/annotations/ReadOwn.java" />
@@ -217,6 +206,7 @@
         <option value="$PROJECT_DIR$/vaadin-sample/pom.xml" />
         <option value="$PROJECT_DIR$/service-jpa/pom.xml" />
         <option value="$PROJECT_DIR$/persistence-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/vaadin-sample/src/main/java/org/djabry/platform/vaadin/config/StartupUsersSignup.java" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -274,16 +264,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="platform-parent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platform-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -696,7 +676,19 @@
       <option name="project" value="LOCAL" />
       <updated>1420672759350</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Updated readme to include install info">
+      <created>1420681675415</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1420681675415</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Updated readme to include install info">
+      <created>1420681764826</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1420681764826</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -780,7 +772,8 @@
     <MESSAGE value="Created a security check for switching between views" />
     <MESSAGE value="Changed navigation security implementation to add listener to any instantiated UIs and apply security" />
     <MESSAGE value="Created integration tests for applications implementing services" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created integration tests for applications implementing services" />
+    <MESSAGE value="Updated readme to include install info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated readme to include install info" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -796,14 +789,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/org/djabry/platform/persistence/jpa/entity/DBUserAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="58" max-vertical-offset="1005">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/org/djabry/platform/persistence/jpa/entity/DBObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
@@ -1070,14 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/org/djabry/platform/vaadin/config/StartupUsersSignup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="585">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/org/djabry/platform/vaadin/config/ApplicationInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="420">
@@ -1203,13 +1180,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/webapp/META-INF/context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/org/djabry/platform/vaadin/config/StartupUsersSignup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="193" max-vertical-offset="585">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4558011" vertical-offset="0" max-vertical-offset="362">
-          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.53867406" vertical-offset="0" max-vertical-offset="362">
+          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
           <folding />
         </state>
       </provider>

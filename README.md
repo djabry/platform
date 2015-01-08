@@ -1,4 +1,4 @@
-platform
+Platform
 ========
 
 A flexible, modular and secure platform for building a range of java applications.
@@ -9,4 +9,6 @@ This project demonstrates the use of global method security ([Spring security](h
 
 1. Clone this repository: ```$ git clone https://github.com/djabry/platform.git```
 2. Change into the root directory of the working copy and run: ```mvn clean install```
-3. Change to the vaadin-sample directory and run ```mvn jetty:run```
+3. Change to the vaadin-sample directory and run: ```mvn jetty:run```
+4. Browse to http://localhost:8080/
+5. Log in as username: "john.smith" password: "password"
