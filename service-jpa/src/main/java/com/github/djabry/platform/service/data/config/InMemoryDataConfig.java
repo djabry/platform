@@ -50,9 +50,6 @@ public class InMemoryDataConfig implements DataConfig{
     public DataSource dataSource() {
         return new EmbeddedDatabaseBuilder()
             .setType(EmbeddedDatabaseType.H2)
-            //.addScript("classpath:schema/indexes.sql")
-            //.addScript("classpath:schema/message_store.sql")
-            //.addScript("classpath:schema/truncate_data.sql")
             .build();
     }
 
