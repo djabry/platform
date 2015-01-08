@@ -27,12 +27,12 @@
     <parent>
         <artifactId>platform-parent</artifactId>
         <groupId>org.djabry</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>platform-persistence-jpa</artifactId>
-    <name>persistence-jpa</name>
+    <name>${project.groupId}:${project.artifactId}</name>
 
     <dependencies>
         <dependency>
