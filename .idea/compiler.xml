@@ -27,7 +27,6 @@
         <module name="platform-rest-api" />
         <module name="platform-rest-client" />
         <module name="platform-service-jpa" />
-        <module name="platform-vaadin-sample" />
         <module name="rest-client" />
       </profile>
     </annotationProcessing>
