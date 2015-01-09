@@ -1,53 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbaf1e02-acf5-4009-9142-3ace04fa12d5" name="Default" comment="Updated group id to com.github.djabry to be consistent with hosting">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-api/src/main/java/com/github/djabry/platform/rest/AuthenticationController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/ChangePasswordRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/DefaultChangePasswordRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/DefaultLoginRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/DefaultResetPasswordRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/LoginRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_oreilly_springdata_spring_data_book_jpa_1_0_0_BUILD_SNAPSHOT.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_oreilly_springdata_spring_data_jpa_1_0_0_BUILD_SNAPSHOT.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__or_gspringframework_data_spring_data_jpa_1_1_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_android_spring_android_core_2_0_0_M1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_android_spring_android_rest_template_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_android_spring_android_rest_template_2_0_0_M1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_1_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/ResetPasswordRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-client/src/main/java/com/github/djabry/rest/RestAuthenticationService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-client/src/test/java/com/github/djabry/rest/RestAuthenticationServiceIT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-api/src/main/java/com/github/djabry/platform/rest/config/WebApp.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-api/src/main/java/com/github/djabry/platform/rest/config/WebConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-api/src/main/java/com/github/djabry/platform/rest/config/WebSecurityConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-api/platform-rest-api.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-client/platform-rest-client.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-api/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rest-client/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/domain/api/SignUpRequest.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/SignUpRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/security/DefaultSignUpRequest.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/DefaultSignUpRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/AuthenticationService.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/AuthenticationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/test/AuthenticationServiceIT.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/test/AuthenticationServiceIT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBSecurityToken.java" afterPath="$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBSecurityToken.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBUser.java" afterPath="$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/security/DefaultSpringAuthenticationService.java" afterPath="$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/security/DefaultSpringAuthenticationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/security/DevApplicationAccount.java" afterPath="$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/security/DevApplicationAccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/api/SpringAuthenticationService.java" afterPath="$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/api/SpringAuthenticationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service-jpa/src/test/java/com/github/djabry/platform/service/SpringAuthenticationServiceTest.java" afterPath="$PROJECT_DIR$/service-jpa/src/test/java/com/github/djabry/platform/service/SpringAuthenticationServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/StartupUsersSignup.java" afterPath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/StartupUsersSignup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/platform-core.iml" afterPath="$PROJECT_DIR$/core/platform-core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence-jpa/platform-persistence-jpa.iml" afterPath="$PROJECT_DIR$/persistence-jpa/platform-persistence-jpa.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service-jpa/platform-service-jpa.iml" afterPath="$PROJECT_DIR$/service-jpa/platform-service-jpa.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vaadin-sample/platform-vaadin-sample.iml" afterPath="$PROJECT_DIR$/vaadin-sample/platform-vaadin-sample.iml" />
+    <list default="true" id="dbaf1e02-acf5-4009-9142-3ace04fa12d5" name="Default" comment="Created rest api and client for accessing authentication service">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/MIT.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/pom.xml" afterPath="$PROJECT_DIR$/core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence-jpa/pom.xml" afterPath="$PROJECT_DIR$/persistence-jpa/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service-jpa/pom.xml" afterPath="$PROJECT_DIR$/service-jpa/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vaadin-sample/pom.xml" afterPath="$PROJECT_DIR$/vaadin-sample/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="platform-parent.iws" />
@@ -85,87 +42,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RestAuthenticationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-client/src/main/java/com/github/djabry/rest/RestAuthenticationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1320">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="MarkdownPreviewEditor">
+            <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestAuthenticationServiceIT.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rest-client/src/test/java/com/github/djabry/rest/RestAuthenticationServiceIT.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5739796" vertical-offset="0" max-vertical-offset="392">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthenticationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-api/src/main/java/com/github/djabry/platform/rest/AuthenticationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
-              <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthenticationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/AuthenticationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="523" max-vertical-offset="915">
-              <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-api/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-client/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="313" max-vertical-offset="720">
-              <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="platform-rest-api.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-api/platform-rest-api.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1080">
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="platform-rest-client.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rest-client/platform-rest-client.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="480">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,8 +58,50 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2235" max-vertical-offset="5520">
-              <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5505">
+              <caret line="266" column="35" selection-start-line="266" selection-start-column="35" selection-end-line="266" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="883" max-vertical-offset="1275">
+              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/persistence-jpa/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1935">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestAuthenticationService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rest-client/src/main/java/com/github/djabry/rest/RestAuthenticationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
+              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rest-client/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -184,8 +110,40 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-jpa/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1138" max-vertical-offset="1830">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1830">
               <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="93" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auditable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/domain/api/Auditable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="810">
+              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#1625#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hasher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/api/Hasher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="405">
+              <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthenticationController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rest-api/src/main/java/com/github/djabry/platform/rest/AuthenticationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.34438777" vertical-offset="0" max-vertical-offset="1395">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -248,13 +206,13 @@
         <option value="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/DefaultChangePasswordRequest.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/test/AuthenticationServiceIT.java" />
         <option value="$PROJECT_DIR$/rest-api/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/core/pom.xml" />
         <option value="$PROJECT_DIR$/rest-client/src/main/java/com/github/djabry/rest/RestAuthenticationService.java" />
         <option value="$PROJECT_DIR$/rest-api/src/main/java/com/github/djabry/platform/rest/AuthenticationController.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/AuthenticationService.java" />
         <option value="$PROJECT_DIR$/rest-client/pom.xml" />
         <option value="$PROJECT_DIR$/rest-client/src/test/java/com/github/djabry/rest/RestAuthenticationServiceIT.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -370,7 +328,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="copyright" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/NetBeansProjects/Vaadin4Spring-MVP-Sample-SpringSecurity" />
@@ -771,7 +729,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420741041057</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Created rest api and client for accessing authentication service">
+      <created>1420813294589</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1420813294589</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -803,7 +767,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4331984" sideWeight="0.8910162" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4331984" sideWeight="0.8910162" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928476" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4331984" sideWeight="0.1089838" order="7" side_tool="true" content_ui="tabs" />
@@ -815,7 +779,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2916053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2916053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4156545" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Server Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -858,7 +822,8 @@
     <MESSAGE value="Updated readme to include install info" />
     <MESSAGE value="Updated readme to include test authentication info" />
     <MESSAGE value="Updated group id to com.github.djabry to be consistent with hosting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated group id to com.github.djabry to be consistent with hosting" />
+    <MESSAGE value="Created rest api and client for accessing authentication service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created rest api and client for accessing authentication service" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -874,30 +839,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/repository/SecurityTokenRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/profile/Local.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/AccountEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/LogoutAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="570">
@@ -954,34 +895,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="420">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="660">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/StartupUsersSignup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="585">
-          <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/ApplicationInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="420">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1020,9 +937,9 @@
             <element signature="e#338#339#0" expanded="true" />
             <element signature="e#376#377#0" expanded="true" />
             <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1049,14 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1080" max-vertical-offset="4425">
           <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="88" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1275">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1105,14 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBUserAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="1005">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBSecurityToken.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="58" max-vertical-offset="450">
@@ -1121,44 +1022,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="155" max-vertical-offset="570">
-          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="525">
           <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/AbstractAuditable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="750">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/domain/api/Auditable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="510">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1221,24 +1088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-jpa/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1138" max-vertical-offset="1830">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="93" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-api/src/main/java/com/github/djabry/platform/rest/AuthenticationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
-          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/AuthenticationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="523" max-vertical-offset="915">
@@ -1247,26 +1096,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2235" max-vertical-offset="5520">
-          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rest-api/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
           <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rest-client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="313" max-vertical-offset="720">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1287,6 +1120,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rest-client/src/test/java/com/github/djabry/rest/RestAuthenticationServiceIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/AbstractAuditable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="750">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="155" max-vertical-offset="570">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence-jpa/src/main/java/com/github/djabry/platform/persistence/jpa/entity/DBUserAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="613" max-vertical-offset="1005">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="420">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/StartupUsersSignup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="585">
+          <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/ApplicationInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="420">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5505">
+          <caret line="266" column="35" selection-start-line="266" selection-start-column="35" selection-end-line="266" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1275">
+          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence-jpa/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1935">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rest-client/src/main/java/com/github/djabry/rest/RestAuthenticationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1380">
@@ -1297,13 +1233,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rest-client/src/test/java/com/github/djabry/rest/RestAuthenticationServiceIT.java">
+    <entry file="file://$PROJECT_DIR$/rest-client/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5739796" vertical-offset="0" max-vertical-offset="392">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-jpa/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1830">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="93" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/domain/api/Auditable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="810">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#1625#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-jpa/src/main/java/com/github/djabry/platform/service/api/Hasher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="405">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api/src/main/java/com/github/djabry/platform/rest/AuthenticationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34438777" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,6 +1285,18 @@
             <option name="proportions">
               <list>
                 <option value="0.47640967" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <last-edited>MIT</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1360,11 +1340,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>platform-rest-client</last-edited>
+          <last-edited>platform-parent</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.47640967" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
