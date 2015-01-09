@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbaf1e02-acf5-4009-9142-3ace04fa12d5" name="Default" comment="Put copyright headers back in">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="dbaf1e02-acf5-4009-9142-3ace04fa12d5" name="Default" comment="Moved sample vaadin module to a separate github repo">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/platform-vaadin-sample.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/AccountEvent.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/AccountEventFilter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/LoginAction.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/LogoutAction.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/ApplicationInitializer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/StartupUsersSignup.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/WebConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/WebSecurityConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/navigation/NavigationSecurity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/Action.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/BannerPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/HomePresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/LoginPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/SamplePresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/Sections.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/SideBarPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/StartupFilter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/ui/MainUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/view/AccountProfileView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/view/BannerView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/view/BaseMainViewAbstr.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/view/HomeView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/view/LoginView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/view/SampleView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/view/SideBarView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vaadin-sample/src/main/webapp/WEB-INF/web.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -44,45 +68,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AccountEventFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/AccountEventFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="675">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#1620#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/ui/MainUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
-              <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RestAuthenticationService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rest-client/src/main/java/com/github/djabry/rest/RestAuthenticationService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1650">
               <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/LoginAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="388" max-vertical-offset="780">
-              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,33 +115,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1093" max-vertical-offset="5655">
-              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="94" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.53571427" vertical-offset="330" max-vertical-offset="5640">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vaadin-sample/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4363" max-vertical-offset="4755">
-              <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5441989" vertical-offset="13" max-vertical-offset="375">
+            <state vertical-scroll-proportion="-6.5666666" vertical-offset="13" max-vertical-offset="375">
               <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
               <folding />
             </state>
@@ -220,8 +200,8 @@
         <option value="$PROJECT_DIR$/rest-client/pom.xml" />
         <option value="$PROJECT_DIR$/rest-client/src/test/java/com/github/djabry/rest/RestAuthenticationServiceIT.java" />
         <option value="$PROJECT_DIR$/rest-client/src/main/java/com/github/djabry/rest/RestAuthenticationService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -278,6 +258,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="platform-parent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="platform-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="platform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -756,7 +746,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420814131620</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Moved sample vaadin module to a separate github repo">
+      <created>1420823181315</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1420823181316</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -845,7 +841,8 @@
     <MESSAGE value="Updated group id to com.github.djabry to be consistent with hosting" />
     <MESSAGE value="Created rest api and client for accessing authentication service" />
     <MESSAGE value="Put copyright headers back in" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put copyright headers back in" />
+    <MESSAGE value="Moved sample vaadin module to a separate github repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved sample vaadin module to a separate github repo" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -861,46 +858,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/LoginPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/HomePresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="465">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/presenter/BannerPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="435">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/navigation/NavigationSecurity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="660">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/github/djabry/platform/service/api/DefaultResetPasswordRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="405">
@@ -1154,30 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="420">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/StartupUsersSignup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="585">
-          <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/config/ApplicationInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="420">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1275">
@@ -1230,34 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/AccountEventFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="675">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#1620#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/account/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="388" max-vertical-offset="780">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/src/main/java/com/github/djabry/platform/vaadin/ui/MainUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rest-client/src/main/java/com/github/djabry/rest/RestAuthenticationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1650">
@@ -1279,29 +1184,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vaadin-sample/pom.xml">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4363" max-vertical-offset="4755">
-          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+        <state vertical-scroll-proportion="-6.5666666" vertical-offset="13" max-vertical-offset="375">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1093" max-vertical-offset="5655">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="94" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5441989" vertical-offset="13" max-vertical-offset="375">
-          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.53571427" vertical-offset="330" max-vertical-offset="5640">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
           <folding />
         </state>
       </provider>

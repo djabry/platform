@@ -35,7 +35,6 @@
         <module>core</module>
         <module>persistence-jpa</module>
         <module>service-jpa</module>
-        <module>vaadin-sample</module>
         <module>rest-api</module>
         <module>rest-client</module>
     </modules>
