@@ -24,15 +24,21 @@
         <processorPath useClasspath="true" />
         <module name="platform-core" />
         <module name="platform-persistence-jpa" />
+        <module name="platform-rest-api" />
+        <module name="platform-rest-client" />
         <module name="platform-service-jpa" />
         <module name="platform-vaadin-sample" />
+        <module name="rest-client" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="platform-core" target="1.7" />
       <module name="platform-persistence-jpa" target="1.7" />
+      <module name="platform-rest-api" target="1.7" />
+      <module name="platform-rest-client" target="1.7" />
       <module name="platform-service-jpa" target="1.7" />
       <module name="platform-vaadin-sample" target="1.7" />
+      <module name="rest-client" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

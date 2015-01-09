@@ -32,15 +32,12 @@ import com.github.djabry.platform.domain.api.Permission;
 import com.github.djabry.platform.domain.api.SecurityToken;
 import com.github.djabry.platform.persistence.jpa.entity.DBUserAccount;
 import com.github.djabry.platform.persistence.jpa.entity.QDBUserAccount;
-import com.github.djabry.platform.service.api.Hasher;
-import com.github.djabry.platform.service.api.PermissionMapper;
-import com.github.djabry.platform.service.api.SpringAuthenticationService;
+import com.github.djabry.platform.service.api.*;
 import com.github.djabry.platform.service.config.TestConfig;
 import com.github.djabry.platform.service.config.TestInitializer;
 import com.github.djabry.platform.service.repository.AccountRepository;
 import com.github.djabry.platform.service.repository.SecurityTokenRepository;
 import com.github.djabry.platform.service.repository.UserRepository;
-import com.github.djabry.platform.service.security.DefaultSignUpRequest;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -108,7 +105,8 @@ public class SpringAuthenticationServiceTest {
     public void testLogin(){
 
         testSignUp();
-        SecurityToken login = springAuthenticationService.login("john", "test1");
+
+        SecurityToken login = springAuthenticationService.login(new DefaultLoginRequest("john", "test1"));
         assertNotNull("Failed to log in", login);
 
     }

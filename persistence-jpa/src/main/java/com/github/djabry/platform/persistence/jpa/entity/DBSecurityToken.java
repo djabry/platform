@@ -27,6 +27,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 import java.util.UUID;
 
@@ -37,6 +38,7 @@ import java.util.UUID;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
+@XmlRootElement
 public class DBSecurityToken extends DBObject<String> implements SecurityToken<DBUser> {
     @Id
     private String id = UUID.randomUUID().toString();

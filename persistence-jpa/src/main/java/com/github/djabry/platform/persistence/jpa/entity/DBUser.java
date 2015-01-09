@@ -27,6 +27,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by djabry on 03/01/15.
@@ -35,6 +36,7 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
+@XmlRootElement
 public class DBUser extends DBObject<Long> implements User<DBUser> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id

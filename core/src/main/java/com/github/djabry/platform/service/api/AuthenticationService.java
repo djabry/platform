@@ -1,10 +1,7 @@
 package com.github.djabry.platform.service.api;
 
 import com.github.djabry.platform.domain.api.SecurityToken;
-import com.github.djabry.platform.domain.api.SignUpRequest;
 import com.github.djabry.platform.domain.api.User;
-import com.github.djabry.platform.domain.api.annotations.Password;
-import com.github.djabry.platform.domain.api.annotations.Username;
 
 import javax.validation.constraints.NotNull;
 
@@ -13,40 +10,41 @@ import javax.validation.constraints.NotNull;
  */
 public interface AuthenticationService<U extends User> extends DomainService {
 
+
     /**
-     * This method is to enable a normal user/administrator to log in
-     *
-     * @param username The username of the account
-     * @param password The unencrypted password to log in with
-     * @return The authentication token associated with the session
+     * @param loginRequest The request containing the user credentials
+     * @return The security token associated with a successful request, null otherwise
      */
+    SecurityToken<U> login(@NotNull LoginRequest loginRequest);
 
-    SecurityToken<U> login(@Username String username, @Password String password);
 
-
-    //@Authenticate
+    /**
+     * @param request The request containing the user credentials and details
+     * @return The security token associated with a successful request, null otherwise
+     */
     SecurityToken<U> signUp(@NotNull SignUpRequest request);
 
 
     /**
-     * @param resetPasswordToken The token for resetting the password
-     * @param newPassword        The new unencrypted password
+     * @param request The request to change the password
+     * @return True if the password was changed successfully, false otherwise
      */
 
-    boolean resetPassword(@NotNull SecurityToken<U> resetPasswordToken, @Password String newPassword);
+    boolean changePassword(@NotNull ChangePasswordRequest request);
 
 
     /**
      * Request a token to reset the password of the current user
      *
-     * @param oldPassword The old unencrypted password
+     * @param request The request to reset the user password
+     * @return The security token allowing the user to change password, null if unsuccessful
      */
 
-    SecurityToken<U> requestPasswordResetToken(@Password String oldPassword);
+    SecurityToken<U> requestPasswordResetToken(@NotNull ResetPasswordRequest request);
 
 
     /**
-     * @return The current logged in user
+     * @return The current logged in user, null if none logged in
      */
 
     U getCurrentUser();

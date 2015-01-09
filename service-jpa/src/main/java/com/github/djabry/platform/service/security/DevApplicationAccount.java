@@ -1,5 +1,6 @@
 package com.github.djabry.platform.service.security;
 
+import com.github.djabry.platform.service.api.DefaultSignUpRequest;
 import com.github.djabry.platform.service.profile.Dev;
 import org.springframework.stereotype.Service;
 

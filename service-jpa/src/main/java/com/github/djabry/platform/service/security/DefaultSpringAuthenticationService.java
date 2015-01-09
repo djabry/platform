@@ -23,10 +23,8 @@
 package com.github.djabry.platform.service.security;
 
 import com.github.djabry.platform.domain.api.SecurityToken;
-import com.github.djabry.platform.domain.api.SignUpRequest;
 import com.github.djabry.platform.persistence.jpa.entity.*;
-import com.github.djabry.platform.service.api.Hasher;
-import com.github.djabry.platform.service.api.SpringAuthenticationService;
+import com.github.djabry.platform.service.api.*;
 import com.github.djabry.platform.service.repository.AccountRepository;
 import com.github.djabry.platform.service.repository.SecurityTokenRepository;
 import com.github.djabry.platform.service.repository.UserRepository;
@@ -40,6 +38,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by djabry on 04/01/15.
@@ -79,7 +78,17 @@ public class DefaultSpringAuthenticationService implements SpringAuthenticationS
      */
     @Override
     public SecurityToken<DBUser> login(String username, String password) {
+        return this.login(new DefaultLoginRequest(username, password));
+    }
 
+    /**
+     * @param loginRequest The request containing the user credentials
+     * @return The security token associated with a successful request, null otherwise
+     */
+    @Override
+    public SecurityToken<DBUser> login(@NotNull LoginRequest loginRequest) {
+        String username = loginRequest.getUsername();
+        String password = loginRequest.getPassword();
         BooleanExpression expression = QDBUserAccount.dBUserAccount.user.username.eq(username);
         DBUserAccount userSecurity = accountRepository.findOne(expression);
         if(userSecurity!=null){
@@ -97,7 +106,6 @@ public class DefaultSpringAuthenticationService implements SpringAuthenticationS
 
         }
         return null;
-
     }
 
     @Override
@@ -139,26 +147,28 @@ public class DefaultSpringAuthenticationService implements SpringAuthenticationS
     }
 
     /**
-     * @param resetPasswordToken The token for resetting the password
-     * @param newPassword        The new unencrypted password
+     * @param request The request to change the password
+     * @retun True if the password was successfully changed, false otherwise
      */
     @Override
-    public boolean resetPassword(SecurityToken resetPasswordToken, String newPassword) {
+    public boolean changePassword(ChangePasswordRequest request) {
 
-        if (resetPasswordToken.getUser().equals(this.getCurrentUser())) {
-            DBSecurityToken token = this.securityTokenRepository.findOne(resetPasswordToken.getId());
-            if (token != null) {
+        String securityTokenId = request.getSecurityTokenId();
+        DBSecurityToken securityToken = this.securityTokenRepository.findOne(securityTokenId);
 
-                DBUserAccount account = this.accountRepository.findOne(QDBUserAccount.dBUserAccount.user.eq(token.getUser()));
+        if (securityToken != null) {
+            String newPassword = request.getNewPassword();
+            DBUserAccount account = this.accountRepository.findOne(QDBUserAccount.dBUserAccount.user.eq(securityToken.getUser()));
                 try {
                     String encryptedPassword = hasher.hashPassword(account.getId(), newPassword);
                     account.setEncryptedPassword(encryptedPassword);
                     this.accountRepository.save(account);
+                    return true;
                 } catch (Exception e) {
                     log.severe(e.getMessage());
                 }
 
-            }
+
         }
 
         return false;
@@ -167,32 +177,27 @@ public class DefaultSpringAuthenticationService implements SpringAuthenticationS
     }
 
     /**
-     * Change the current account password
      *
-     * @param oldPassword The old unencrypted password
+     *
+     * @param request The request for resetting the password
+     * @return The security token if the request was successful
      */
     @Override
-    public SecurityToken<DBUser> requestPasswordResetToken(String oldPassword) {
+    public SecurityToken<DBUser> requestPasswordResetToken(ResetPasswordRequest request) {
 
-        DBUser currentUser = getCurrentUser();
-        if(currentUser!=null ){
-
-            BooleanExpression exp = QDBUserAccount.dBUserAccount.user.eq(currentUser);
+        BooleanExpression exp = QDBUserAccount.dBUserAccount.user.username.eq(request.getUsername());
             DBUserAccount userSecurity = accountRepository.findOne(exp);
 
             try {
-                String hashedPassword = hasher.hashPassword(userSecurity.getId(),oldPassword);
+                String hashedPassword = hasher.hashPassword(userSecurity.getId(), request.getOldPassword());
                 if(hashedPassword.equals(userSecurity.getEncryptedPassword())){
-
                     return this.createAndSave(userSecurity.getUser());
-
                 }
 
             } catch (Exception e) {
                 log.severe(e.getMessage());
             }
 
-        }
 
         return null;
 

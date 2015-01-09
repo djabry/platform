@@ -23,14 +23,11 @@
 package com.github.djabry.platform.service.api;
 
 import com.github.djabry.platform.domain.api.SecurityToken;
-import com.github.djabry.platform.domain.api.SignUpRequest;
 import com.github.djabry.platform.domain.api.User;
 import com.github.djabry.platform.domain.api.annotations.Password;
 import com.github.djabry.platform.domain.api.annotations.Username;
 import com.github.djabry.platform.service.security.annotations.Authenticate;
 import com.github.djabry.platform.service.security.annotations.ReadOwn;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * Created by djabry on 03/01/15.
@@ -48,28 +45,6 @@ public interface SpringAuthenticationService<U extends User> extends Authenticat
      */
 
     SecurityToken<U> login(@Username String username, @Password String password);
-
-
-    //@Authenticate
-    SecurityToken<U> signUp(@NotNull SignUpRequest request);
-    
-
-    /**
-     * @param resetPasswordToken The token for resetting the password
-     * @param newPassword The new unencrypted password
-     */
-    @Authenticate
-    boolean resetPassword(@NotNull SecurityToken<U> resetPasswordToken, @Password String newPassword);
-    
-
-    /**
-     *
-     * Request a token to reset the password of the current user
-     * @param oldPassword The old unencrypted password
-     *
-     */
-    @ReadOwn
-    SecurityToken<U> requestPasswordResetToken(@Password String oldPassword);
 
 
     /**

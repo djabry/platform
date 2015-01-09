@@ -1,9 +1,9 @@
 package com.github.djabry.platform.vaadin.config;
 
 import com.github.djabry.platform.domain.api.SecurityToken;
+import com.github.djabry.platform.service.api.DefaultSignUpRequest;
 import com.github.djabry.platform.service.api.SpringAuthenticationService;
 import com.github.djabry.platform.service.profile.Dev;
-import com.github.djabry.platform.service.security.DefaultSignUpRequest;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

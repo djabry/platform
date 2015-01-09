@@ -36,6 +36,8 @@
         <module>persistence-jpa</module>
         <module>service-jpa</module>
         <module>vaadin-sample</module>
+        <module>rest-api</module>
+        <module>rest-client</module>
     </modules>
 
     <properties>
@@ -203,6 +205,11 @@
                 <artifactId>classmate</artifactId>
                 <version>1.1.0</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.android</groupId>
+                <artifactId>spring-android-rest-template</artifactId>
+                <version>2.0.0.M1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -267,6 +274,14 @@
                     <configuration>
                         <source>1.7</source>
                         <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.5</version>
+                    <configuration>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                 </plugin>
             </plugins>

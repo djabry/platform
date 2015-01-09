@@ -1,9 +1,7 @@
 package com.github.djabry.platform.test;
 
 import com.github.djabry.platform.domain.api.SecurityToken;
-import com.github.djabry.platform.domain.api.SignUpRequest;
-import com.github.djabry.platform.service.api.AuthenticationService;
-import com.github.djabry.platform.service.api.DomainServices;
+import com.github.djabry.platform.service.api.*;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -29,7 +27,7 @@ public class AuthenticationServiceIT extends TestCase {
     public void testLogin(String username, String password) {
 
         AuthenticationService authenticationService = this.getAuthService();
-        SecurityToken loginToken = authenticationService.login(username, password);
+        SecurityToken loginToken = authenticationService.login(this.generateLoginRequest(username, password));
         assertNotNull("Sign up securityToken not returned", loginToken);
         authenticationService.logout();
 
@@ -37,42 +35,25 @@ public class AuthenticationServiceIT extends TestCase {
 
     public void testChangePassword(String username, String oldPassword, String password) {
         AuthenticationService authenticationService = this.getAuthService();
-        authenticationService.login(username, oldPassword);
-        SecurityToken securityToken = authenticationService.requestPasswordResetToken(oldPassword);
+        SecurityToken login = authenticationService.login(this.generateLoginRequest(username, password));
+        DefaultResetPasswordRequest resetPasswordRequest = new DefaultResetPasswordRequest(login.getUser().getUsername(), oldPassword);
+        SecurityToken securityToken = authenticationService.requestPasswordResetToken(resetPasswordRequest);
         assertNotNull("Failed to request change password token", securityToken);
-        boolean passwordChanged = authenticationService.resetPassword(securityToken, password);
+        DefaultChangePasswordRequest changePasswordRequest = new DefaultChangePasswordRequest(securityToken.getId(), password);
+        boolean passwordChanged = authenticationService.changePassword(changePasswordRequest);
         assertTrue("Failed to change password", passwordChanged);
         authenticationService.logout();
 
     }
 
     public SignUpRequest generateSignupRequest(final String username, final String password) {
+        return new DefaultSignUpRequest(username, password, username + ".smith@test.com");
 
-        return new SignUpRequest() {
-            /**
-             * @return The requested username
-             */
-            @Override
-            public String getUsername() {
-                return username;
-            }
+    }
 
-            /**
-             * @return The requested password
-             */
-            @Override
-            public String getPassword() {
-                return password;
-            }
-
-            /**
-             * @return The requested email
-             */
-            @Override
-            public String getEmail() {
-                return username + "." + password + "@example.com";
-            }
-        };
+    public LoginRequest generateLoginRequest(final String username, final String password) {
+        return new DefaultLoginRequest(username, password);
+        
     }
 
     @Test
