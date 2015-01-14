@@ -45,6 +45,8 @@
         <querydsl.version>3.6.0</querydsl.version>
         <jetty.version>9.3.0.M1</jetty.version>
         <jackson.version>2.3.2</jackson.version>
+        <nd4j.version>0.0.3.5.6-SNAPSHOT</nd4j.version>
+        <dl4j.version>0.0.3.3-SNAPSHOT</dl4j.version>
     </properties>
 
     <developers>
@@ -218,6 +220,31 @@
                 <groupId>org.springframework.android</groupId>
                 <artifactId>spring-android-rest-template</artifactId>
                 <version>2.0.0.M1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.nd4j</groupId>
+                <artifactId>nd4j-jcublas-6.5</artifactId>
+                <version>${nd4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.nd4j</groupId>
+                <artifactId>nd4j-api</artifactId>
+                <version>${nd4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.nd4j</groupId>
+                <artifactId>nd4j-jblas</artifactId>
+                <version>${nd4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.nd4j</groupId>
+                <artifactId>jcublas</artifactId>
+                <version>6.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.deeplearning4j</groupId>
+                <artifactId>deeplearning4j-nlp</artifactId>
+                <version>${dl4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

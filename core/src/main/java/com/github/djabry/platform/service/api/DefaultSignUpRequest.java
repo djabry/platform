@@ -23,6 +23,7 @@
 package com.github.djabry.platform.service.api;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Email;
 
@@ -32,7 +33,7 @@ import java.io.Serializable;
 /**
  * Created by djabry on 05/01/15.
  */
-
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @XmlRootElement
